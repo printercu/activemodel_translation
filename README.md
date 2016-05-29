@@ -37,22 +37,17 @@ Or install it yourself as:
 class User < ActiveRecord::Base
   # lazy translation
   def title
-    super || self.class.t(:'.default_title')
+    super || self.class.t('.default_title')
   end
 end
 
 # translated plural model name
-User.model_name.human(plural: true)
+User.model_name.human_plural
 
 # ru.yml
 # activerecord:
-#   models:
-#     user:
-#       one: Пользователь
-#       few: Пользователя
-#       many: Пользователей
-#       other: Пользователя
-#       plural: Пользователи
+#   models_plural:
+#     user: Пользователи
 ```
 
 ## Contributing
